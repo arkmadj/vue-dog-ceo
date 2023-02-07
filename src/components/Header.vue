@@ -1,7 +1,7 @@
 <template>
 	<header class="flex justify-between h-28 items-center">
 		<div class="flex">
-			<span class="font-titan text-[#222222]">dogfinder</span>
+			<span class="font-titan text-[#222222] mb-11">dogfinder</span>
 			<img
 				alt="Vue logo"
 				class="logo"
