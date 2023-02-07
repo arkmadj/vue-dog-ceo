@@ -5,6 +5,7 @@ module.exports = {
 		extend: {
       fontFamily: {
         'titan': ['Titan One', 'cursive'],
+        'poppins': ['Poppins', 'sans-serif']
       }
     },
 	},
