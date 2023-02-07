@@ -1,6 +1,6 @@
 <template>
 	<header class="flex justify-between h-28 items-center">
-		<div class="flex">
+		<div class="flex items-center">
 			<span class="font-titan text-[#222222] mb-11">dogfinder</span>
 			<img
 				alt="Vue logo"
