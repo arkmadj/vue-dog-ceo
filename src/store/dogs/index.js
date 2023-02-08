@@ -24,12 +24,24 @@ const actions = {
 			console.log(error);
 		}
 	},
+  async fetchDogs({commit}) {
+    try {
+      const response = await api.dogs.fetchDogs();
+      const {status, message} = response.data;
+      console.log({message})
+      commit("FETCH_DOGS", message)
+    }catch(error){
+      console.log(error)
+    }
+  }
 };
 
 const mutations = {
 	FETCH_ALL_BREEDS(state, message) {
-    // console.log("Mutation", message)
 		state.dogs.breeds = message;
+	},
+	FETCH_DOGS(state, message) {
+		state.dogs.all = message;
 	},
 };
 
