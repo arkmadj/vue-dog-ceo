@@ -1,9 +1,12 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import HeroSection from "../components/HeroSection.vue";
+import TabNav from "../components/TabNav.vue";
+
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <HeroSection />
+    <TabNav/>
   </main>
 </template>
