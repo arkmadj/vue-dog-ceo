@@ -1,5 +1,5 @@
 <template>
-    <nav class="flex gap-12 pb-2 border-b border-b-[#E6E6E6]">
+    <nav class="flex gap-12 pb-2 border-b border-b-[#E6E6E6] mb-[60px]">
       <div class="flex flex-col items-center w-fit">
         <i>
           <DogFaceIcon/>
