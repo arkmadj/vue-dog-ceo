@@ -1,5 +1,5 @@
 <template>
-	<section class="flex flex-col items-center">
+	<section class="flex flex-col items-center mb-28">
 		<h1
 			class="font-unbounded text-[#624CAB] text-5xl w-[544px] text-center mb-5"
 		>
@@ -11,7 +11,7 @@
 			easier.
 		</p>
 		<div
-			class="border border-[#828282] rounded-full flex items-center h-14 w-[586px] justify-between pl-6 gap-1"
+			class="border border-[#828282] rounded-full flex items-center h-14 w-[586px] justify-between pl-6 gap-1 focus-within:border-[#624CAB] focus-within:ring-[#624CAB] focus-within:ring-1"
 		>
 			<i>
 				<SearchIcon />
