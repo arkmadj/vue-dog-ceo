@@ -6,6 +6,7 @@
 			:src="props.url"
 			width="279"
 			height="174"
+			v-lazy="props.url"
 		/>
 		<div class="flex items-center justify-between px-3 h-14">
 			<spa class="">Beagle</spa>
