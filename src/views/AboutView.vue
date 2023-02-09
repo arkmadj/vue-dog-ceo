@@ -1,5 +1,5 @@
 <template>
-	<main class="w-[80%] mx-auto md:w-full mb-20">
+	<main class="w-[80%] mx-auto md:w-full mb-20 mt-[67px] lg:max-w-7xl">
 		<section
 			class="flex flex-col m-auto mb-6 md:mb-16 md:grid md:grid-cols-2 gap-7 w-fit"
 		>
@@ -28,19 +28,20 @@
 							<i>
 								<TagIcon />
 							</i>
-							<span class="text-[#624CAB] font-medium md:text-lg text-sm">{{
+							<span class="text-[#624CAB] font-medium md:text-lg text-[12`px]">{{
 								tag.label
 							}}</span>
 						</div>
-						<span class="font-medium text-sm md:text-xl text-[#393939] capitalize">{{
-							tag.value
-						}}</span>
+						<span
+							class="font-medium text-[12px] md:text-xl text-[#393939] capitalize"
+							>{{ tag.value }}</span
+						>
 					</div>
 				</div>
 			</div>
 		</section>
 		<hr />
-		<section class="grid grid-cols-2 gap-8 mt-6 md:flex md:justify-between">
+		<section class="grid grid-cols-2 gap-8 mt-6 md:flex md:justify-between animate-slide-in">
 			<div class="grid gap-3" v-for="(rating, key) in ratings" :key="key">
 				<span class="font-medium text-base md:text-lg text-[#393939]">{{
 					rating.label
@@ -55,8 +56,11 @@ import { onMounted, computed, ref } from "vue";
 import { useStore } from "vuex";
 import TagIcon from "../components/icons/TagIcon.vue";
 import Stars from "../components/Stars.vue";
+import { useRoute } from "vue-router";
 
 const store = useStore();
+const route = useRoute();
+
 
 const randomSizeIndex = ref(0);
 const randomRegionIndex = ref(0);
@@ -104,8 +108,8 @@ randomExpectancyIndex.value = Math.floor(
 
 const cardTags = computed(() => {
 	return [
-		{ label: "Sub breed", value: subBreed.value },
-		{ label: "Popular in", value: randomSizes.value[randomRegionIndex.value] },
+		{ label: "Sub breed", value: subBreed.value || "-" },
+		{ label: "Popular in", value: randomRegions.value[randomRegionIndex.value] },
 		{
 			label: "Life expectancy",
 			value: randomExpectancies.value[randomExpectancyIndex.value],
@@ -128,11 +132,12 @@ const imageSrc = computed(() => store.getters.selectedBreed[0]);
 const name = computed(
 	() => store.getters.selectedBreed[0]?.split("/")[4]?.split("-")[0]
 );
+
 const subBreed = computed(
 	() => store.getters.selectedBreed[0]?.split("/")[4]?.split("-")[1]
 );
 
 onMounted(async () => {
-	await store.dispatch("fetchBreed", "mastiff");
+	await store.dispatch("fetchBreed", route.params.breed);
 });
 </script>
