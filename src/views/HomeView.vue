@@ -9,14 +9,13 @@ const store = useStore();
 
 const dogs = computed(() => store.getters.dogs);
 
-
 onMounted(async () => {
 	await store.dispatch("fetchDogs");
 });
 </script>
 
 <template>
-	<main>
+	<main class="w-[90%] mx-auto md:w-full mb-20">
 		<HeroSection />
 		<TabNav />
 		<div class="grid grid-cols-4 gap-x-[26px] gap-y-[50px]">
