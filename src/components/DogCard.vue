@@ -1,8 +1,8 @@
 <template>
-	<div class="bg-[#F1EEFC] h-[235px] rounded-2xl w-full">
+	<div class="bg-[#F1EEFC] h-[255px] rounded-2xl w-full">
 		<div class="relative">
 			<img
-				class="object-cover rounded-2xl h-44 w-full border-2 border-[#624CAB] cursor-pointers"
+				class="object-cover rounded-2xl h-48 w-full border-2 border-[#624CAB] cursor-pointers"
 				alt="Dog image"
 				width="279"
 				height="174"
@@ -22,7 +22,9 @@
 		<div class="flex items-center justify-between px-3 h-14">
 			<div class="flex flex-col">
 				<span class="text-[10px] text-gray-500 font-base">Sub breed</span>
-				<span class="text-xs font-semibold capitalize">{{ subBreed ?  subBreed : '-' }}</span>
+				<span class="text-xs font-semibold capitalize">{{
+					subBreed ? subBreed : "-"
+				}}</span>
 			</div>
 			<span
 				class="bg-[#DCD4F7] rounded-lg text-[#534091] text-xs px-[10px] py-1 font-bold capitalize"
@@ -33,6 +35,11 @@
 </template>
 <script setup>
 import { computed } from "vue";
+import { useRoute, useRouter } from "vue-router";
+
+const router = useRouter()
+const route = useRoute()
+
 const props = defineProps({
 	url: {
 		type: String,
@@ -41,7 +48,7 @@ const props = defineProps({
 });
 
 const gotoDogDetails = () => {
-	alert(breed.value);
+	router.push(`about/${breed.value}`);
 };
 
 const breed = computed(() => props.url.split("/")[4]?.split("-")[0]);
