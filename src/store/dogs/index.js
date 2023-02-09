@@ -18,7 +18,6 @@ const actions = {
 		try {
 			const response = await api.dogs.fetchAllBreeds();
 			const { status, message } = response.data;
-      // console.log({message})
 			commit("FETCH_ALL_BREEDS", message);
 		} catch (error) {
 			console.log(error);
@@ -28,7 +27,6 @@ const actions = {
     try {
       const response = await api.dogs.fetchDogs();
       const {status, message} = response.data;
-      console.log({message})
       commit("FETCH_DOGS", message)
     }catch(error){
       console.log(error)
