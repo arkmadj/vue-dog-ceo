@@ -3,7 +3,6 @@
 		<img
 			class="object-cover rounded-2xl h-44 w-72 border-2 border-[#624CAB]"
 			alt="Dog image"
-			:src="props.url"
 			width="279"
 			height="174"
 			v-lazy="props.url"
