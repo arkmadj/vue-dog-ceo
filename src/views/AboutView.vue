@@ -1,5 +1,5 @@
 <template>
-	<main class="w-[90%] mx-auto md:w-full mb-20">
+	<main class="w-[80%] mx-auto md:w-full mb-20">
 		<section
 			class="flex flex-col m-auto mb-6 md:mb-16 md:grid md:grid-cols-2 gap-7 w-fit"
 		>
