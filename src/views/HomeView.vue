@@ -15,10 +15,10 @@ onMounted(async () => {
 </script>
 
 <template>
-	<main class="w-[90%] mx-auto md:w-full mb-20">
+	<main class="w-[80%] mx-auto md:w-full mb-20">
 		<HeroSection />
 		<TabNav />
-		<div class="grid grid-cols-4 gap-x-[26px] gap-y-[50px]">
+		<div class="grid grid-cols-1 md:grid-cols-4 gap-x-[26px] gap-y-[50px]">
 			<DogCard
 				v-for="(url, key) in dogs"
 				:key="key"
