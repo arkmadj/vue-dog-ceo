@@ -1,9 +1,9 @@
 <template>
-	<main>
+	<main class="w-[90%] mx-auto md:w-full mb-20">
 		<section
-			class="flex flex-col m-auto mb-16 md:grid md:grid-cols-2 gap-7 w-fit"
+			class="flex flex-col m-auto mb-6 md:mb-16 md:grid md:grid-cols-2 gap-7 w-fit"
 		>
-			<div class="w-[400px] h-[300px]">
+			<div class="w-full md:w-[400px] md:h-[300px]">
 				<img
 					class="object-cover rounded-2xl w-full h-full border-2 border-[#624CAB] cursor-pointers"
 					alt="Dog image"
@@ -14,13 +14,13 @@
 			</div>
 			<div class="flex flex-col justify-between">
 				<h2
-					class="col-span-2 mt-1 text-[48px] font-bold capitalize font-unbounded"
+					class="col-span-2 mt-0 mb-5 md:mb-0 md:mt-4 text-3xl md:text-[48px] font-bold capitalize font-unbounded"
 				>
 					{{ name }}
 				</h2>
-				<div class="grid grid-cols-2 gap-[10px] w-fit h-fit">
+				<div class="grid grid-cols-2 gap-[10px] w-full md:w-fit h-fit">
 					<div
-						class="w-[203px] h-[104px] rounded-lg bg-[#F1EEFC] p-4 flex flex-col justify-between"
+						class="w-full h-[78px] rounded-md p-3 md:w-[203px] md:h-[104px] md:rounded-lg bg-[#F1EEFC] md:p-4 flex flex-col justify-between"
 						v-for="(tag, key) in cardTags"
 						:key="key"
 					>
@@ -28,11 +28,11 @@
 							<i>
 								<TagIcon />
 							</i>
-							<span class="text-[#624CAB] font-medium text-lg">{{
+							<span class="text-[#624CAB] font-medium md:text-lg text-sm">{{
 								tag.label
 							}}</span>
 						</div>
-						<span class="font-medium text-xl text-[#393939] capitalize">{{
+						<span class="font-medium text-sm md:text-xl text-[#393939] capitalize">{{
 							tag.value
 						}}</span>
 					</div>
@@ -42,7 +42,7 @@
 		<hr />
 		<section class="grid grid-cols-2 gap-8 mt-6 md:flex md:justify-between">
 			<div class="grid gap-3" v-for="(rating, key) in ratings" :key="key">
-				<span class="font-medium text-lg text-[#393939]">{{
+				<span class="font-medium text-base md:text-lg text-[#393939]">{{
 					rating.label
 				}}</span>
 				<Stars :score="rating.value" />
