@@ -9,7 +9,7 @@ const state = {
 };
 
 const getters = {
-	breeds: (state) => state.dogs.breeds,
+breeds: (state) => state.dogs.breeds,
 	dogs: (state) => state.dogs.all,
 	selectedBreed: (state) => state.dogs.selectedBreed,
 };
@@ -49,7 +49,7 @@ const mutations = {
 		state.dogs.breeds = message;
 	},
 	FETCH_DOGS(state, message) {
-		state.dogs.all = message;
+		state.dogs.all = [...state.dogs.all, ...message];
 	},
 	FETCH_BREED(state, message) {
 		state.dogs.selectedBreed = message;
