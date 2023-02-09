@@ -10,7 +10,14 @@ async function fetchDogs(){
   return response
 }
 
+async function fetchBreed(breed){
+  const response = await axios.get(`/breed/${breed}/images`)
+  return response
+}
+
+
 export default {
 	fetchAllBreeds,
   fetchDogs,
+  fetchBreed
 };
