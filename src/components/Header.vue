@@ -1,6 +1,6 @@
 <template>
-	<header class="flex justify-between h-28 items-center mb-11">
-		<div class="flex">
+	<header class="flex items-center justify-between h-28 border-b-0 md:border-b-[1px] border-b-[#E9E9E9] px-[10%] lg:px-[15%]">
+		<div class="flex cursor-pointer" @click="gotoHomePage">
 			<span class="font-titan text-[#222222]">dogfinder</span>
 			<img
 				alt="Vue logo"
@@ -20,3 +20,14 @@
 		</nav>
 	</header>
 </template>
+<script setup>
+import { useRouter } from 'vue-router';
+
+const router = useRouter()
+
+const gotoHomePage = () => {
+	router.push({
+		name: 'home',
+	})
+}
+</script>
