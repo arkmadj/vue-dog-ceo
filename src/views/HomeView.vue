@@ -10,8 +10,8 @@ const store = useStore();
 const dogs = computed(() => store.getters.dogs);
 
 
-onMounted(() => {
-	store.dispatch("fetchDogs");
+onMounted(async () => {
+	await store.dispatch("fetchDogs");
 });
 </script>
 
