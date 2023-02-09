@@ -4,13 +4,14 @@ const state = {
 	dogs: {
 		breeds: {},
 		all: [],
-		selected: {},
+		selectedBreed: [],
 	},
 };
 
 const getters = {
 	breeds: (state) => state.dogs.breeds,
 	dogs: (state) => state.dogs.all,
+	selectedBreed: (state) => state.dogs.selectedBreed,
 };
 
 const actions = {
@@ -23,15 +24,24 @@ const actions = {
 			console.log(error);
 		}
 	},
-  async fetchDogs({commit}) {
-    try {
-      const response = await api.dogs.fetchDogs();
-      const {status, message} = response.data;
-      commit("FETCH_DOGS", message)
-    }catch(error){
-      console.log(error)
-    }
-  }
+	async fetchDogs({ commit }) {
+		try {
+			const response = await api.dogs.fetchDogs();
+			const { status, message } = response.data;
+			commit("FETCH_DOGS", message);
+		} catch (error) {
+			console.log(error);
+		}
+	},
+	async fetchBreed({ commit }, breed) {
+		try {
+			const response = await api.dogs.fetchBreed(breed);
+			const { status, message } = response.data;
+			commit("FETCH_BREED", message);
+		} catch (error) {
+			console.log(error);
+		}
+	},
 };
 
 const mutations = {
@@ -40,6 +50,9 @@ const mutations = {
 	},
 	FETCH_DOGS(state, message) {
 		state.dogs.all = message;
+	},
+	FETCH_BREED(state, message) {
+		state.dogs.selectedBreed = message;
 	},
 };
 
